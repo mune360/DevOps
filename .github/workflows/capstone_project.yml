@@ -12,7 +12,7 @@ on:
 #set default working directory
 defaults:
   run:
-    working-directory: capstone_project    
+    working-directory: capstone_project/hello-world    
 
 jobs:
   job1:
