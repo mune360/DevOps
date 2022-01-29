@@ -50,6 +50,7 @@ jobs:
 
 
   job1:
+    needs: [build-job]
     name: Checkout job
     runs-on: ubuntu-latest
     steps:
