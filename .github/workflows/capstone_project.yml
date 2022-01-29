@@ -49,13 +49,12 @@ jobs:
 
 
 
-  job1:
-    needs: [build-job]
-    name: Checkout job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout task
-        uses: actions/checkout@v2
+  #job1:
+   # name: Checkout job
+    #runs-on: ubuntu-latest
+    #steps:
+     # - name: Checkout task
+      #  uses: actions/checkout@v2
 
     #job2:
      #   needs: [job1]
