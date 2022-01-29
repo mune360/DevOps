@@ -1,0 +1,17 @@
+#Workflow written by David Lagace
+#For DevOps Bootcamp / January 2022
+
+#Trigger on Push and Pull requests
+name: Workflow for Capstone Project
+on: [push, pull_request]
+
+jobs:
+  job1:
+    name: Checkout job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout task
+        uses: actions/checkout@v2
+
+    #job2:
+     #   needs: [job1]
