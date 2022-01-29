@@ -9,6 +9,7 @@ on:
   pull_request:
     branches: [ main ]
 
+#set default working directory
 defaults:
   run:
     working-directory: capstone_project    
