@@ -1,0 +1,34 @@
+- name: My First Playbook
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Ping Check using ping module
+      ping:
+
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: /usr/share/nginx/html/index.html  
+        dest: /usr/share/nginx/html/index.html.bak
+        remote_src: yes
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Ansible check file exists.
+      stat:
+        path: /usr/share/nginx/html/index.html.bak
+      register: p
+    - debug:
+        msg: "File exists..."
+      when: p.stat.exists
+    - debug:
+        msg: "File not found"
+      when: p.stat.exists == False
+
+    - name: Copy using the 'content' for inline data
+      copy:
+        content: 'Hello DevOps !'
+        dest: /usr/share/nginx/html/index.html  
+      when: p.stat.exists
+

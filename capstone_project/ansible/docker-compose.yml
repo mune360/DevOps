@@ -9,16 +9,10 @@ services:
       - type: bind
         source: ./ansible_files
         target: /home/ansible_controller/ansible_files
-  target1:
-    build: 
-      context: ./ansible_base
-      dockerfile: Dockerfile
-    container_name: ansible_target1
 
-  target2:
-    build: 
-      context: ./ansible_base
-      dockerfile: Dockerfile
-    container_name: ansible_target2
+networks:
+  default:
+    external: true
+    name: hello-world_default
 
 
